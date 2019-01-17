@@ -1,0 +1,24 @@
+{
+  "name": "calculatorbot",
+  "version": "1.0.0",
+  "description": "Fb Messenger Calculator Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfzam/CalculatorBot.git"
+  },
+  "author": "jfzam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfzam/CalculatorBot/issues"
+  },
+  "homepage": "https://github.com/jfzam/CalculatorBot#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
