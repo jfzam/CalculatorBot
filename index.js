@@ -22,7 +22,7 @@ app.get('/webhook/', (req, res) => {
   }
 })
 
-const token = "<EAAMt85OjL0oBAHTGez3cQ1ZCUtnTZBsc3RkP7J1JcEr3xJUGLs4RXHwzapYGp0S5kHML6s0ZCIdb5lmC4kloOgyi4AO5spgZA9iOm0E4ROwZBxhntwVgxhB1qZACGLtyk7vBkJtl4QQZCRZCEvQf83hfgsvSYLBIZA6BBBUBxUvazZAQZDZD";
+const token = "EAAMt85OjL0oBABZC69495kbvYByjsEeTPHITp81gXHJZAbg1XZBI4TRNV2i1kLfkWyvRhrQrlGs2dhniLTSWNT9FCWURqRqLB4ZB3BQAKUVT9eZAR013uZBIxhXtfHGhCV8jcxctWvkvGmXBFVXhWVajmlbIaOOEfjmd03kIa3iAZDZD";
 app.post('/webhook/', function(req, res) {
     var messaging_events = req.body.entry[0].messaging;
     for (var i = 0; i < messaging_events.length; i++) {
