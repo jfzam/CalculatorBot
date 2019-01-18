@@ -23,9 +23,16 @@ app.get('/webhook/', (req, res) => {
 
 const token = "<EAAMt85OjL0oBAHTGez3cQ1ZCUtnTZBsc3RkP7J1JcEr3xJUGLs4RXHwzapYGp0S5kHML6s0ZCIdb5lmC4kloOgyi4AO5spgZA9iOm0E4ROwZBxhntwVgxhB1qZACGLtyk7vBkJtl4QQZCRZCEvQf83hfgsvSYLBIZA6BBBUBxUvazZAQZDZD";
 app.post('/webhook/', function(req, res) {
-  console.log("requesting for post")
+  console.log('START')
+  console.log("request body: ")
   console.log(req.body)
+  console.log('----------')
+  console.log('request messaging')
   console.log(req.body.entry[0].messaging)
+  console.log('----------')
+  console.log('get request text')
+  console.log(req.body.entry[0].messaging[0].message.text)
+  console.log('END')
     /*var messaging_events = req.body.entry[0].messaging;
     for (var i = 0; i < messaging_events.length; i++) {
         var event = req.body.entry[0].messaging[i];
