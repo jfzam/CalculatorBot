@@ -30,7 +30,7 @@ app.post('/webhook/', function(req, res) {
         if (event.message && event.message.text) {
             var text = event.message.text;
             console.log(`sender #${i}. Message: ${text}`)
-            sendTextMessage(sender, text + "!");
+            sendTextMessage(sender, text);
         }
     }
     res.sendStatus(200);
