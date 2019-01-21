@@ -20,9 +20,8 @@ app.get('/webhook/', (req, res) => {
     }
 })
 
-const token = "EAAMt85OjL0oBABZC69495kbvYByjsEeTPHITp81gXHJZAbg1XZBI4TRNV2i1kLfkWyvRhrQrlGs2dhniLTSWNT9FCWURqRqLB4ZB3BQAKUVT9eZAR013uZBIxhXtfHGhCV8jcxctWvkvGmXBFVXhWVajmlbIaOOEfjmd03kIa3iAZDZD";
-
-app.post('/webhook/', function(req, res) {
+const token = 'EAAMt85OjL0oBALNVuYquDuXApZCJnaEARjmu7cGLxHjoJtSWXkcL8pJy0zgE0KOhPtwMulhRwipA1fzf1lddZCn4WhSoIGPxZAPb8fg6DpskqxjfIhOACwkqRzTXeL4vJA5nJuCEwZCN5ks4cWOs72HZB3R4kFxFbYmsedzENpwZDZD'
+app.post('/webhook/', (req, res) => {
     var messaging_events = req.body.entry[0].messaging;
     for (var i = 0; i < messaging_events.length; i++) {
         var event = req.body.entry[0].messaging[i];
@@ -30,7 +29,7 @@ app.post('/webhook/', function(req, res) {
         if (event.message && event.message.text) {
             var text = event.message.text;
             console.log(`sender #${i}. Message: ${text}`)
-            sendTextMessage(sender, text);
+            sendTextMessage(sender, text + "!");
         }
     }
     res.sendStatus(200);
