@@ -56,13 +56,13 @@ function sendTextMessage(sender, text) {
         unsupportedOps += '=, '
     }
     if (unsupportedOps.length > 0) {
-        res = `[${unsupportedOps.substr(0, unsupportedOps.length -2)}] is not supported`
+        res = `[ ${unsupportedOps.substr(0, unsupportedOps.length -2)} ] is not supported, use only [ (), *, /, +, - ]`
     } else {
         let eq = equation.replace(/[^0-9+-/*()]/g, '')
         try {
             res = eval(eq)
         } catch (err) {
-            res = 'syntax error'
+            res = 'Syntax error'
         }
     }
 
