@@ -9,7 +9,7 @@ const
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'))
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.sendFile(path.join(__dirname+'/index.html'))
 })
 
 app.get('/webhook/', (req, res) => {
