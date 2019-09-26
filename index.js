@@ -5,7 +5,8 @@ const
     bodyParser = require('body-parser'),
     app = express().use(bodyParser.json()),
     request = require('request'),
-    path = require('path');
+    path = require('path')
+
 
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'))
 
@@ -14,23 +15,23 @@ app.get('/', (req, res) => {
 })
 
 app.get('/webhook/', (req, res) => {
-    if (req.query['hub.verify_token'] === 'jayzero_token') {
+    if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN) {
         res.send(req.query['hub.challenge'])
     } else {
         res.send('Wrong token!')
     }
 })
 
-const token = 'EAAMt85OjL0oBALNVuYquDuXApZCJnaEARjmu7cGLxHjoJtSWXkcL8pJy0zgE0KOhPtwMulhRwipA1fzf1lddZCn4WhSoIGPxZAPb8fg6DpskqxjfIhOACwkqRzTXeL4vJA5nJuCEwZCN5ks4cWOs72HZB3R4kFxFbYmsedzENpwZDZD'
+const token = process.env.TOKEN
 app.post('/webhook/', (req, res) => {
     var messaging_events = req.body.entry[0].messaging;
     for (var i = 0; i < messaging_events.length; i++) {
-        var event = req.body.entry[0].messaging[i];
-        var sender = event.sender.id;
+        var event = req.body.entry[0].messaging[i]
+        var sender = event.sender.id
         if (event.message && event.message.text) {
             var text = event.message.text;
             console.log(`sender #${i}. Message: ${text}`)
-            sendTextMessage(sender, text + "!");
+            sendTextMessage(sender, text + "!")
         }
     }
     res.sendStatus(200);
